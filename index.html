@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <link  rel="stylesheet" href="styles.css">
+
+   
+
+</head>
+<body>
+
+
+     <div class="gallery">
+        <ul class="controls">
+            <li class="buttons active" data-filter="all">all</li>
+            <li class="buttons" data-filter="ice-cream">ice-cream</li>
+            <li class="buttons" data-filter="chocolate">chocolate</li>
+            <li class="buttons" data-filter="cake">cake</li>
+            <li class="buttons" data-filter="juice">juice</li>
+            <li class="buttons" data-filter="sandwich">sandwich</li>
+            
+        </ul>
+
+        <div class="image-container">   
+
+            <a href="ice-cream.jpg" class="image ice-cream">
+                <img src="ice-cream.jpg" alt="" style="width: 300px;">
+            </a>
+                
+            <a href="ice-cream 2.jpg" class="image ice-cream">
+                <img src="ice-cream 2.jpg" alt="" style="width: 300px; height: 240px;">
+            </a>
+
+
+            <a href="ice-cream1.webp" class="image ice-cream">
+                <img src="ice-cream1.webp" alt="" style="width: 400px; height: 240px;">
+            </a>
+
+
+
+
+            <a href="R.jpg" class="image ice-cream">
+                <img src="R.jpg" alt="" style="width: 250px; height: 240px;">
+            </a>
+
+
+
+             <a href="chocolate1.jpg" class="image chocolate">
+                <img src="chocolate1.jpg" alt="" style="width: 320px; height: 190px;">
+            </a>
+
+
+
+            <a href="chocolate2.jpg" class="image chocolate">
+                <img src="chocolate2.jpg" alt="" style="width: 320px;">
+            </a>
+
+
+
+            <a href="chocolate3.jpg" class="image chocolate">
+                <img src="chocolate3.jpg" alt="" style="width: 300px;">
+            </a>
+
+
+
+
+
+            <a href="cake2.jpg" class="image cake">
+                <img src="cake2.jpg" alt="" style="width: 300px; height: 210px;">
+            </a>
+
+
+            <a href="cake3.jpg" class="image cake">
+                <img src="cake3.jpg" alt="" style="width: 300px; height: 210px;">
+            </a>
+
+
+
+
+
+            <a href="juice1.jpg" class="image juice">
+                <img src="juice1.jpg" alt="" style="width: 300px;">
+            </a>
+
+
+            <a href="juice2.jpg" class="image juice">
+                <img src="juice2.jpg" alt="" style="width: 350px;">
+            </a>
+
+   
+
+            <a href="juice3.jpg" class="image juice">
+                <img src="juice3.jpg" alt="" style="width: 300px; height: 220px;">
+            </a>
+
+
+
+            <a href="sandwich4.jpg" class="image sandwich">
+                <img src="sandwich4.jpg" alt="" style="width: 300px;">
+            </a>
+
+
+
+            <a href="sandwich2.jpg" class="image sandwich">
+                <img src="sandwich2.jpg" alt="" style="width: 300px;">
+            </a>
+            
+            <a href="sandwich3.jpg" class="image sandwich">
+                <img src="sandwich3.jpg" alt="" style="width: 300px;">
+            </a>
+
+
+
+
+        </div>
+
+     </div>
+
+
+
+<script>
+
+    $(document).ready(function(){
+
+        $('.buttons').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+
+            var filter = $(this).attr('data-filter');
+            if(filter == 'all'){
+                $('.image').show(400);
+            }
+
+            else{
+                $('.image').not('.'+filter).hide(200);
+                $('.image').filter('.'+filter).show(400);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
